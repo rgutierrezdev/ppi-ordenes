@@ -1,0 +1,65 @@
+[
+  {
+    "id": 1,
+    "nombre": "Apple",
+    "precioUnitario": 177.97,
+    "ticker": "AAPL",
+    "tipoActivo": 1
+  },
+  {
+    "id": 2,
+    "nombre": "Alphabet Inc",
+    "precioUnitario": 138.21,
+    "ticker": "GOOGL",
+    "tipoActivo": 1
+  },
+  {
+    "id": 3,
+    "nombre": "Microsoft",
+    "precioUnitario": 329.04,
+    "ticker": "MSFT",
+    "tipoActivo": 1
+  },
+  {
+    "id": 4,
+    "nombre": "Coca Cola",
+    "precioUnitario": 58.3,
+    "ticker": "KO",
+    "tipoActivo": 1
+  },
+  {
+    "id": 5,
+    "nombre": "Walmart",
+    "precioUnitario": 163.42,
+    "ticker": "WMT",
+    "tipoActivo": 1
+  },
+  {
+    "id": 6,
+    "nombre": "BONOS ARGENTINA USD 2030 L.A",
+    "precioUnitario": 307.4,
+    "ticker": "AL30",
+    "tipoActivo": 2
+  },
+  {
+    "id": 7,
+    "nombre": "Bonos Globales Argentina USD Step Up 2030",
+    "precioUnitario": 336.1,
+    "ticker": "GD30",
+    "tipoActivo": 2
+  },
+  {
+    "id": 8,
+    "nombre": "Delta Pesos Clase A",
+    "precioUnitario": 0.0181,
+    "ticker": "Delta.Pesos",
+    "tipoActivo": 3
+  },
+  {
+    "id": 9,
+    "nombre": "Fima Premium Clase A",
+    "precioUnitario": 0.0317,
+    "ticker": "Fima.Premium",
+    "tipoActivo": 3
+  }
+]
