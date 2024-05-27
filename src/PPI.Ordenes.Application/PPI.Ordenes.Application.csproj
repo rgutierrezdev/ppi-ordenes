@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="Ardalis.Result.FluentValidation" />
+    <PackageReference Include="Ardalis.Result" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" />
+    <PackageReference Include="FluentValidation" />
+    <PackageReference Include="MediatR" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" />
+    <PackageReference Include="Microsoft.IdentityModel.Tokens" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\PPI.Ordenes.Domain\PPI.Ordenes.Domain.csproj" />
+    <ProjectReference Include="..\PPI.Ordenes.Core\PPI.Ordenes.Core.csproj" />
+    <ProjectReference Include="..\PPI.Ordenes.Query\PPI.Ordenes.Query.csproj" />
+  </ItemGroup>
+  
+</Project>

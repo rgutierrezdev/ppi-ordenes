@@ -1,0 +1,68 @@
+networks:
+  app-network:
+    driver: bridge
+
+services:
+
+  # ASP.NET Core Web API Application
+  ppi-ordenes-webapi:
+    image: ${DOCKER_REGISTRY-}ppi-ordenes-webapi
+    container_name: ppi-ordenes-webapi
+    restart: always
+    build:
+      context: .
+      dockerfile: src/PPI.Ordenes.PublicApi/Dockerfile
+    expose:
+      - 80
+    links:
+      - ppi-sql-server
+      - ppi-mongo-server
+      - ppi-redis
+    networks:
+      - app-network
+    depends_on:
+      - ppi-sql-server
+      - ppi-mongo-server
+      - ppi-redis
+
+  # SQL Server
+  ppi-sql-server:
+    image: mcr.microsoft.com/azure-sql-edge:latest
+    cap_add: [ 'SYS_PTRACE' ]
+    hostname: mssql
+    container_name: ppi-sql-server
+    restart: always
+    expose:
+      - 1433
+    ports:
+      - "1433:1433"
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=Developer01$
+    networks:
+      - app-network
+
+  # MongoDB Server
+  ppi-mongo-server:
+    image: mongo:latest
+    container_name: ppi-mongo-server
+    restart: always
+    expose:
+      - 27017
+    ports:
+      - "27017:27017"
+    networks:
+      - app-network
+
+  # Redis Cache Server
+  ppi-redis:
+    image: redis:latest
+    container_name: ppi-redis
+    command: redis-server --requirepass developer01
+    restart: always
+    expose:
+      - 6379
+    ports:
+      - "6379:6379"
+    networks:
+      - app-network
